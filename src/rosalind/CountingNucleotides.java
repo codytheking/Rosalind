@@ -5,14 +5,19 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Write a description of class CountingNucleotides here.
+ * Counting DNA Nucleotides
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Counts the number of times each
+ * symbol (A, C, G, and T) occur in
+ * a given DNA strand.
+ * 
+ * @author Cody King 
+ * @date 10/27/2016
  */
 
 public class CountingNucleotides
 {
+	// prints the number of occurrences of A, C, G, and T
     public static void printOccur(String file) throws IOException
     {
         int a = 0, c = 0, g = 0, t = 0;
@@ -43,6 +48,7 @@ public class CountingNucleotides
         System.out.println(a + " " + c + " " + g + " " + t);
     }
     
+    // returns DNA strand from file as String
     public static String strand(String file) throws IOException
     {
         Scanner inFile = new Scanner(new File(file));

@@ -4,10 +4,12 @@ import java.util.Scanner;
 import java.io.IOException;
 
 /**
- * Write a description of class CountingNucleotides here.
+ * This is the runner class for 
+ * all of the Rosalind code from
+ * http://rosalind.info/problems/list-view/
  * 
- * @author King 
- * @version 10/27/2016
+ * @author Cody King 
+ * @date 10/27/2016
  */
 
 public class RosalindRunner
@@ -19,11 +21,13 @@ public class RosalindRunner
         String fileName = input.next();
         input.close();
 
-        CountingNucleotides.printOccur(fileName);
+        // Method calls
+        
+        //CountingNucleotides.printOccur(fileName);
         //DNAtoRNA.replaceT(fileName);
         //ReverseCompliment.reverseCompliment(fileName);
-        //NumRabbits.numRabbits(NumRabbits.nums(fileName)[0], NumRabbits.nums(fileName)[1]);
-        //GcContent.gcContent(fileName);
+        //NumRabbits.numRabbits(fileName);
+        GcContent.gcContent(fileName);
         //CountingPointMutations.hammingDistance(fileName);
         //MendelsInheritance.dominantProb(fileName);
         //FindingMotif.printIndices(fileName);
