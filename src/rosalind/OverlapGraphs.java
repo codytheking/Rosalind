@@ -9,7 +9,12 @@ import java.util.Scanner;
 /**
  * Overlap Graphs
  * 
- * 
+ * For a collection of strings and a positive integer k, 
+ * the overlap graph for the strings is a directed graph O_k
+ * in which each string is represented by a node, and string s
+ * is connected to string t with a directed edge when there is 
+ * a length k suffix of s that matches a length k prefix of t, 
+ * as long as s != t
  * 
  * @author Cody King
  * @date 10/31/2016
