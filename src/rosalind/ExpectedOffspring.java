@@ -4,8 +4,21 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Calculating Expected Offspring
+ * 
+ * Given number of couples possessing each of
+ * the six combined phenotypes, given number
+ * of expected offspring pairs.
+ * 
+ * @author Cody King
+ * @date 11/1/2016
+ *
+ */
+
 public class ExpectedOffspring 
 {
+	// print number of expected offspring pairs
 	public static void printNumExpOffspring(String file) throws IOException
 	{
 		int[] numCouples = nums(file);
