@@ -27,9 +27,15 @@ public class RosalindRunner
         //DNAtoRNA.replaceT(fileName);
         //ReverseCompliment.reverseCompliment(fileName);
         //NumRabbits.numRabbits(fileName);
-        GcContent.gcContent(fileName);
+        //GcContent.gcContent(fileName);
         //CountingPointMutations.hammingDistance(fileName);
         //MendelsInheritance.dominantProb(fileName);
         //FindingMotif.printIndices(fileName);
+        //ConsensusAndProfile.printConsensusProfile(fileName);
+        //MortalRabbits.numRabbits(fileName);
+        //OverlapGraphs.adjList(fileName);
+        //RestrictionSites.printIndices(fileName);
+        //RnaToProtein.covertRnaToProtein(fileName);
+        ExpectedOffspring.printNumExpOffspring(fileName);
     }
 }
