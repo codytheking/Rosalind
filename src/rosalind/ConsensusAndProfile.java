@@ -22,15 +22,85 @@ public class ConsensusAndProfile
 	// prints consensus string and profile matrix
 	public static void printConsensusProfile(String file) throws IOException
 	{
+		List<String> strands = strands(file);
+		int numStrands = strands.size();
+		int strandLength = strands.get(0).length();
+		int[][] profileMatrix = new int[4][strandLength];
+		char[] consensusString = new char[strandLength];
+
+		for(int r = 0; r < 4; r++)
+		{
+			for(int c = 0; c < strandLength; c++)
+			{
+				for(int s = 0; s < numStrands; s++)
+				{
+					if(strands.get(s).indexOf(symbol(r), c) == c)
+					{
+						profileMatrix[r][c]++;
+					}
+				}
+
+			}
+		}
+
+		int max = 0;
+
+		for(int c = 0; c < strandLength; c++)
+		{
+			for(int r = 0; r < 4; r++)
+			{
+				if(profileMatrix[r][c] > max)
+				{
+					max = profileMatrix[r][c];
+					consensusString[c] = symbol(r);
+				}
+			}
+			
+			max = 0;
+		}
+
+		for(int i = 0; i < strandLength; i++)
+		{
+			System.out.print(consensusString[i]);
+		}
 		
-		
+		for(int r = 0; r < 4; r++)
+		{
+			System.out.print("\n" + symbol(r) + ": ");
+
+			for(int c = 0; c < strandLength; c++)
+			{
+				System.out.print(profileMatrix[r][c] + " ");
+			}
+		}
 	}
-	
-	// returns an ArrayList that has two ArrayLists of Strings (labels and strands)
-	public static List<List<String>> strands(String file) throws IOException
+
+	public static char symbol(int c)
+	{
+		char s = 'T';
+
+		if(c == 0)
+		{
+			s = 'A';
+		}
+
+		else if(c == 1)
+		{
+			s = 'C';
+		}
+
+		else if(c == 2)
+		{
+			s = 'G';
+		}
+
+		return s;
+	}
+
+	// returns an ArrayList that has the DNA strands
+	public static List<String> strands(String file) throws IOException
 	{
 		Scanner inFile = new Scanner(new File(file));
-		List<String> labels = new ArrayList<>();
 		List<String> strands = new ArrayList<>();
 
 		int i = -1;
@@ -57,15 +127,10 @@ public class ConsensusAndProfile
 			else
 			{
 				i++;
-				labels.add(str.substring(1));
 			}
 		}
 		inFile.close();
 
-		List<List<String>> together = new ArrayList<>();
-		together.add(labels);
-		together.add(strands);
-
-		return together;
+		return strands;
 	}
 }
