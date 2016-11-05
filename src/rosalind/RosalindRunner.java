@@ -36,6 +36,7 @@ public class RosalindRunner
         //OverlapGraphs.adjList(fileName);
         //RestrictionSites.printIndices(fileName);
         //RnaToProtein.covertRnaToProtein(fileName);
-        ExpectedOffspring.printNumExpOffspring(fileName);
+        //ExpectedOffspring.printNumExpOffspring(fileName);
+        SharedMotif.printLongestSub(fileName);
     }
 }
